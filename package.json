@@ -1,0 +1,19 @@
+{
+  "name": "task4_cupress_cucumber",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Anna Ruban",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@badeball/cypress-configuration": "^6.1.1",
+    "@badeball/cypress-cucumber-preprocessor": "^22.0.1",
+    "@cypress/browserify-preprocessor": "^3.0.2",
+    "cypress": "^14.2.0"
+  }
+}
