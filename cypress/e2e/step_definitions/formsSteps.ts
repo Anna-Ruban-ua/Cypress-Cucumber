@@ -17,4 +17,4 @@ Then('I see an error message', () => {
         const validationMessage = ($input[0] as HTMLInputElement).validationMessage;
         expect(validationMessage).to.not.be.empty;
         })
-})
+});

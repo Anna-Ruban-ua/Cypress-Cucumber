@@ -1,15 +1,32 @@
 import { endpoints } from './endpoints';
 
-export const menuItems = [
+export type HeaderItem = {
+  menuName: string;
+  itemUrl?: string;
+  isDirectLink?: boolean;
+};
+
+export type FooterItem = {
+  footerName: string;
+  itemUrl: string;
+};
+
+export type BlockItem = HeaderItem | FooterItem;
+
+export const headerMenuItems: HeaderItem[] = [
   { menuName: "Products", itemUrl: endpoints.products, isDirectLink: false },
   { menuName: "Solutions", itemUrl: endpoints.solutions, isDirectLink: false },
   { menuName: "Pricing", itemUrl: endpoints.pricing, isDirectLink: true },
   { menuName: "Why Telnyx", itemUrl: endpoints.whyTelnyx, isDirectLink: false },
   { menuName: "Resources", itemUrl: endpoints.resources, isDirectLink: false },
-  { menuName: "Developers" }
+  { menuName: "Developers" } // без URL, отже буде розгортання
 ];
 
-export const footerCompanyItems = [
+export const headerBlocksMap: Record<string, HeaderItem[]> = {
+  Header: headerMenuItems,
+};
+
+export const footerCompanyItems: FooterItem[] = [
   { footerName: "Our Network", itemUrl: endpoints.ourNetwork },
   { footerName: "Global coverage", itemUrl: endpoints.globalCoverage },
   { footerName: "Release Notes", itemUrl: endpoints.releaseNotes },
@@ -19,6 +36,11 @@ export const footerCompanyItems = [
   { footerName: "Voice AI", itemUrl: endpoints.voiceAI }
 ];
 
-export const footerBlocksMap: Record<string, { footerName: string; itemUrl: string }[]> = {
+export const footerBlocksMap: Record<string, FooterItem[]> = {
   Company: footerCompanyItems,
+};
+
+export const blocksMap: Record<string, BlockItem[]> = {
+  ...headerBlocksMap,
+  ...footerBlocksMap,
 };
