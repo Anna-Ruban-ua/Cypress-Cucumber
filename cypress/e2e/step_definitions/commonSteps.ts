@@ -13,3 +13,7 @@ Then('I redirected to the {string} page', (page: string) => {
     if (!expectedPath) throw new Error(`No endpoint found for page: "${page}"`);
     homePage.getCurrentUrl().should('include', expectedPath);
 });
+
+When('I open the Header menu', () => {
+    homePage.clickMenuToggleButton();
+});
