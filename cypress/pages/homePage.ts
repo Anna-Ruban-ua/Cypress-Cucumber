@@ -48,6 +48,10 @@ export default class HomePage extends BasePage {
         }
     }
 
+    getFooterItemElement(footerName: string) {
+        return this.getElementByText(this.footerMenu, footerName);
+      }
+
     clickFooterItem(footerName: string) {
         this.getElement(this.footerMenu).first().scrollIntoView();
         this.clickElementByText(this.footerMenu, footerName);

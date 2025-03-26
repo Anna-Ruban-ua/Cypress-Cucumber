@@ -1,12 +1,13 @@
 {
-    "compilerOptions": {
-      "target": "es5",
-      "lib": ["es5", "dom"],
-      "types": ["cypress"],
-      "moduleResolution": "node",
-      "esModuleInterop": true,
-      "strict": true,
-      "baseUrl": "./"
-    },
-    "include": ["cypress/**/*.ts"]
-  }
+  "compilerOptions": {
+    "target": "es2020",
+    "lib": ["es2020", "dom"],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "types": ["cypress"]
+  },
+  "include": ["cypress/**/*.ts"]
+}

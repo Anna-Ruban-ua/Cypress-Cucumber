@@ -1,4 +1,13 @@
+import { endpoints } from "../utils/endpoints";
 export default class BasePage {
+
+    navigateTo(page: string) {
+        const key = page.toLowerCase() as keyof typeof endpoints;
+        const path = endpoints[key];
+    
+        if (!path) throw new Error(`No endpoint found for page: "${page}"`);
+        cy.visit(path);
+    }
     
     visit(url: string, options?: Partial<Cypress.VisitOptions>) {
         cy.visit(url, options);

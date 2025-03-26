@@ -13,7 +13,9 @@
   "devDependencies": {
     "@badeball/cypress-configuration": "^6.1.1",
     "@badeball/cypress-cucumber-preprocessor": "^22.0.1",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.4",
     "@cypress/browserify-preprocessor": "^3.0.2",
-    "cypress": "^14.2.0"
+    "cypress": "^14.2.0",
+    "esbuild": "^0.25.1"
   }
 }
