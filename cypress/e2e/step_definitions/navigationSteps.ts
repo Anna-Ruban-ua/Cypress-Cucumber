@@ -50,3 +50,13 @@ Then('each link of the {string} block should navigate to its corresponding page'
     cy.visit("/");
   });
 });
+
+Then('cookies banner hides', () => {
+  cy.reload();
+  homePage.getCookieBanner().should('not.exist');
+});
+
+Then('cookies banner appears', () => {
+  cy.reload();
+  homePage.getCookieBanner().should('be.visible', { timeout: 8000 });
+})

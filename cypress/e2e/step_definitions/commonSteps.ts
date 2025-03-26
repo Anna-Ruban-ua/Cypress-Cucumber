@@ -17,3 +17,12 @@ Then('I redirected to the {string} page', (page: string) => {
 When('I open the Header menu', () => {
     homePage.clickMenuToggleButton();
 });
+
+When('I accept cookies', () => {
+    homePage.getCookieByName('cookie-consent').should('not.exist');
+    homePage.acceptCookies();
+});
+
+When('I clear cookies', () => {
+    cy.clearCookies();
+});
