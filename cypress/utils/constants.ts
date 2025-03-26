@@ -18,3 +18,7 @@ export const footerCompanyItems = [
   { footerName: "Terms and conditions of service", itemUrl: endpoints.termsService },
   { footerName: "Voice AI", itemUrl: endpoints.voiceAI }
 ];
+
+export const footerBlocksMap: Record<string, { footerName: string; itemUrl: string }[]> = {
+  Company: footerCompanyItems,
+};
