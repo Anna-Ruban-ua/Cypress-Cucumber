@@ -17,6 +17,10 @@ When('I check that the {string} block links are visible in the footer', (blockNa
   });
 });
 
+When('I open the Header menu', () => {
+    homePage.clickMenuToggleButton();
+});
+
 Then('each link of the {string} block should navigate to its corresponding page', (blockName: string) => {
   const items: BlockItem[] = blocksMap[blockName];
   if (!items) {
@@ -50,13 +54,3 @@ Then('each link of the {string} block should navigate to its corresponding page'
     cy.visit("/");
   });
 });
-
-Then('cookies banner hides', () => {
-  cy.reload();
-  homePage.getCookieBanner().should('not.exist');
-});
-
-Then('cookies banner appears', () => {
-  cy.reload();
-  homePage.getCookieBanner().should('be.visible', { timeout: 8000 });
-})

@@ -1,6 +1,6 @@
 Feature: Form Validation Tests
 
-  @positive
+  @positive 
   Scenario: TC02 - Valid "Connect with us" Form submit
     Given I open the "home" page
     When I enter a valid email
