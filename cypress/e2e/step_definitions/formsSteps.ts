@@ -4,17 +4,14 @@ import { generateValidEmail, generateInvalidEmail } from "cypress/utils/dataGene
 
 const homePage = new HomePage();
 
-When('I enter a valid email', () => {
-    homePage.fillContactWithUsForm(generateValidEmail());
-});
-
-When('I enter an invalid email', () => {
-    homePage.fillContactWithUsForm(generateInvalidEmail());
+When(/^I enter an? (valid|invalid) email$/, (type: string) => {
+    const email = type === 'valid' ? generateValidEmail() : generateInvalidEmail();
+    homePage.fillContactWithUsForm(email);
 });
 
 Then('I see an error message', () => {
     homePage.getConnectWithUsInputElement().then(($input) => {
         const validationMessage = ($input[0] as HTMLInputElement).validationMessage;
         expect(validationMessage).to.not.be.empty;
-        })
+    });
 });
