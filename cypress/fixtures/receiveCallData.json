@@ -1,0 +1,12 @@
+{
+    "validPhones": [
+        "+380302209999",
+        "+380706665555",
+        "+380901115533"
+    ],
+    "validDomains": [
+        "romstal.com",
+        "telnyx.io",
+        "msl.ua"
+    ]
+}

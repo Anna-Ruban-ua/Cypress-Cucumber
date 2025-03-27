@@ -1,3 +1,5 @@
+import { faker } from '@faker-js/faker';
+
 export const generateValidEmail = () => `user_${Date.now()}@test.com`;
 
 export const generateInvalidEmail = () => `user_${Date.now()}_invalid`;
@@ -17,3 +19,15 @@ export function generateInvalidSearch(): string {
     }
     return result + Date.now();
   }
+
+export const generateInvalidPhone = (): string => {
+  return faker.string.numeric(5);
+};
+
+export const generateInvalidDomain = (): string => {
+  return faker.internet.domainWord();
+};
+
+export const generateValidCompanyName = (): string => {
+  return faker.company.name();
+};

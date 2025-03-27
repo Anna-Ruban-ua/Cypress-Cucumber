@@ -8,7 +8,8 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "types": ["cypress"],
-    "baseUrl": "./"
+    "baseUrl": "./",
+    "resolveJsonModule": true
   },
   "include": ["cypress/**/*.ts"]
 }
