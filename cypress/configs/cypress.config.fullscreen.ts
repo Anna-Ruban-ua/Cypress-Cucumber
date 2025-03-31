@@ -3,9 +3,11 @@ import createBundler from "@bahmutov/cypress-esbuild-preprocessor";
 import { addCucumberPreprocessorPlugin } from "@badeball/cypress-cucumber-preprocessor";
 import createEsbuildPlugin from "@badeball/cypress-cucumber-preprocessor/esbuild";
 
-module.exports = defineConfig({
+export default defineConfig({
   e2e: {
     baseUrl: "https://telnyx.com",
+    viewportWidth: 1920,
+    viewportHeight: 1080,
     projectId: "h9w5zn",
     specPattern: "cypress/e2e/**/*.feature",
     supportFile: "cypress/support/e2e.ts",

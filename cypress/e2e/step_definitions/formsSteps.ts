@@ -1,8 +1,10 @@
-import { Given, When, Then, DataTable } from "@badeball/cypress-cucumber-preprocessor";
+import { When, Then, DataTable } from "@badeball/cypress-cucumber-preprocessor";
 import HomePage from "../../pages/homePage";
 import { generateValidEmail, generateInvalidEmail, generateInvalidPhone, generateInvalidDomain, generateValidCompanyName } from "cypress/utils/dataGenerator";
 import receiveCallData from "../../fixtures/receiveCallData.json";
 import { faker } from '@faker-js/faker';
+import { endpoints } from "../../utils/endpoints";
+
 const homePage = new HomePage();
 
 When(/^I enter an? (valid|invalid) email in the "Connect with us" form$/, (type: string) => {
@@ -14,6 +16,7 @@ Then('I see an error notification', () => {
     homePage.getConnectWithUsInputElement().then(($input) => {
         const validationMessage = ($input[0] as HTMLInputElement).validationMessage;
         expect(validationMessage).to.not.be.empty;
+        cy.url().should('not.include', endpoints.signUp);
     });
 });
 
@@ -23,7 +26,6 @@ When('I fill the {string} Form with:', (formName: string, dataTable: DataTable) 
     const mobile = data.mobile === 'invalid' ? generateInvalidPhone() : faker.helpers.arrayElement(receiveCallData.validPhones);
     const domain = data.domain === 'invalid' ? generateInvalidDomain() : faker.helpers.arrayElement(receiveCallData.validDomains);
     const companyName = generateValidCompanyName();
-
     homePage.fillReceiveACallForm({ email, mobile, domain, companyName });
 });
 

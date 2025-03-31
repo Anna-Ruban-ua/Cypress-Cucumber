@@ -20,6 +20,15 @@ export function generateInvalidSearch(): string {
     return result + Date.now();
   }
 
+export function getRandomCountries(count: number = 1): string[] {
+    const countries = [
+      'Ukraine', 'United States', 'Canada', 'Germany', 'France',
+      'United Kingdom', 'Australia', 'Brazil', 'India', 'Japan',
+      'Netherlands', 'Spain', 'Italy', 'Mexico', 'Poland'
+    ];
+    return Cypress._.sampleSize(countries, count);
+  }
+
 export const generateInvalidPhone = (): string => {
   return faker.string.numeric(5);
 };

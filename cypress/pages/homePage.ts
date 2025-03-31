@@ -1,5 +1,4 @@
 import BasePage from "./basePage";
-import { endpoints } from '../utils/endpoints';
 import { ReceiveCallFormData } from '../types/formTypes';
 
 export default class HomePage extends BasePage {
@@ -17,14 +16,6 @@ export default class HomePage extends BasePage {
     public acceptCookieButton = "#onetrust-accept-btn-handler";
 
     public receiveCallForm = "form[aria-label='voice-ai-form']";
-
-    constructor() {
-        super();
-      }
-
-    visitHomePage() {
-        this.visit(endpoints.home);
-    }
     
     clickMenuToggleButton() {
         this.getElement(this.menuToggleButton).then(($button) => {
