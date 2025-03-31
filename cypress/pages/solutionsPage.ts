@@ -1,7 +1,7 @@
 import BasePage from "./basePage";
 import { solutionsTexts } from '../support/texts';
 
-export default class SolutionsPage extends BasePage {
+class SolutionsPage extends BasePage {
 
     public searchInput = '#search';
     public searchResultTitles = 'h3.c-PJLV.c-rMlRu.c-PJLV-cHtIMp-dark-false';
@@ -26,3 +26,5 @@ export default class SolutionsPage extends BasePage {
         return this.getElementByTextWithOptions(name, { matchCase: false });
     }
 }
+
+export default new SolutionsPage();

@@ -1,13 +1,8 @@
 import { When, Then } from "@badeball/cypress-cucumber-preprocessor";
-import SolutionsPage from "cypress/pages/solutionsPage";
-import MessagingPage from "cypress/pages/messagingPage";
+import solutionsPage from "cypress/pages/solutionsPage";
+import messagingPage from "cypress/pages/messagingPage";
 import { pickRandomTitle, generateInvalidSearch } from "cypress/utils/dataGenerator";
-import FilterPage from "cypress/pages/filterPage";
-
-const solutionsPage = new SolutionsPage();
-const messagingPage = new MessagingPage();
-const filterPage = new FilterPage();
-
+import filterPage from "cypress/pages/filterPage";
 
 When('I choose the filter option', () => {
   filterPage.openFilterMenu();

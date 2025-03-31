@@ -1,11 +1,8 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
-import HomePage from "../../pages/homePage";
+import homePage from "../../pages/homePage";
 import { endpoints } from "cypress/utils/endpoints";
-import Error404Page from "cypress/pages/error404Page";
+import error404Page from "cypress/pages/error404Page";
 import { generateInvalidUrl } from "cypress/utils/dataGenerator";
-
-const homePage = new HomePage();
-const error404Page = new Error404Page();
 
 Given('I open the {string} page', (page: string) => {
     if (page === 'fake') {

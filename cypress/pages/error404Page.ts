@@ -1,15 +1,12 @@
 import BasePage from "./basePage";
 import { error404Texts } from '../support/texts';
 
-export default class Error404Page extends BasePage {
+class Error404Page extends BasePage {
   public backToHomeButtonLocator = 'a[href="/"]';
+  errorBlock = 'div.c-cUhiIV.c-cUhiIV-ibKVMeD-css';
 
-  getErrorMessage1() {
-    return this.containsText(error404Texts.message1);
-  }
-  
-  getErrorMessage2() {
-    return this.containsText(error404Texts.message2);
+  getError() {
+    return this.getElement(this.errorBlock);
   }
   
   getBackToHomeButton() {
@@ -24,3 +21,5 @@ export default class Error404Page extends BasePage {
     this.getBackToHomeButton().click();
   }
 }
+
+export default new Error404Page();

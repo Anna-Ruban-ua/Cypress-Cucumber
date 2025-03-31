@@ -1,11 +1,9 @@
 import { When } from "@badeball/cypress-cucumber-preprocessor";
-import Error404Page from "cypress/pages/error404Page";
-
-const error404Page = new Error404Page();
+import error404Page from "cypress/pages/error404Page";
+import { error404Texts } from '../../support/texts';
 
 When('I see the 404 error message', () => {
-    error404Page.getErrorMessage1().should('be.visible');
-    error404Page.getErrorMessage2().should('be.visible');
+    error404Page.getError().should('contain.text', error404Texts.message1, error404Texts.message2);
     error404Page.getBackToHomeButton().should('be.visible');
 });
 

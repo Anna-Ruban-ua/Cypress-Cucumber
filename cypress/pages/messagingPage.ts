@@ -1,6 +1,6 @@
 import BasePage from "./basePage";
 
-export default class MessagingPage extends BasePage {
+class MessagingPage extends BasePage {
     
   public currencySelect = '#currency-filter';
   public currencyElement = 'span.c-PJLV.c-ihLeEO';
@@ -23,3 +23,5 @@ export default class MessagingPage extends BasePage {
   }  
 
 }
+
+export default new MessagingPage();

@@ -12,7 +12,7 @@ Feature: Navigation Tests
     When I open the Header menu
     Then each link of the "Header" block should navigate to its corresponding page
 
-  @negative 
+  @negative @runThis
   Scenario: TC07 - 404 Page Behavior
     Given I open the "fake" page
     When I see the 404 error message
