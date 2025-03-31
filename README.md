@@ -8,7 +8,6 @@ This repository contains automated end-to-end tests for the Telnyx website, writ
 
 - Node.js (latest LTS recommended)
 - Cypress
-???- Cypress HTML Reporter
 - Cucumber preprocessor (@badeball/cypress-cucumber-preprocessor)
 - TypeScript
 - GitHub (for version control)
@@ -59,7 +58,7 @@ This repository contains automated end-to-end tests for the Telnyx website, writ
    npm run open
    ```
 
-???## CI and Cypress Cloud
+## CI and Cypress Cloud
 
 - The project can be integrated with CI pipelines using GitHub Actions.
 - Cypress Cloud is used to record test runs and view dashboards with test analytics.
