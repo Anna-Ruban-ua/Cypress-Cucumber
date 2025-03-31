@@ -1,4 +1,4 @@
-import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
+import { When } from "@badeball/cypress-cucumber-preprocessor";
 import Error404Page from "cypress/pages/error404Page";
 
 const error404Page = new Error404Page();

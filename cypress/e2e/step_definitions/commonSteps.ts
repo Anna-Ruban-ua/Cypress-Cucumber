@@ -15,7 +15,7 @@ Given('I open the {string} page', (page: string) => {
     }
 });
 
-Then('I redirected to the {string} page', (page: string) => {
+Then('I am redirected to the {string} page', (page: string) => {
     const expectedPath = endpoints[page as keyof typeof endpoints];
     if (!expectedPath) throw new Error(`No endpoint found for page: "${page}"`);
     cy.url().should('include', expectedPath);
@@ -30,12 +30,11 @@ When('I clear cookies', () => {
     cy.clearCookies();
 });
 
-Then('cookies banner hides', () => {
-    cy.reload();
-    homePage.getCookieBanner().should('not.exist');
-});
-  
-Then('cookies banner appears', () => {
-    cy.reload();
+Then('the cookie banner should be {string}', (state: 'visible' | 'hidden') => {
+  cy.reload();
+  if (state === 'visible') {
     homePage.getCookieBanner().should('be.visible', { timeout: 8000 });
+  } else {
+    homePage.getCookieBanner().should('not.exist');
+  }
 });

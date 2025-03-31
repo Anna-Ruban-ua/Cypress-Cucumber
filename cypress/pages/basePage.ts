@@ -2,9 +2,7 @@ import { endpoints } from "../utils/endpoints";
 export default class BasePage {
 
     navigateTo(page: string) {
-        const key = page.toLowerCase() as keyof typeof endpoints;
-        const path = endpoints[key];
-    
+        const path = endpoints[page as keyof typeof endpoints];
         if (!path) throw new Error(`No endpoint found for page: "${page}"`);
         cy.visit(path);
     }
@@ -48,5 +46,9 @@ export default class BasePage {
     getCookieByName(name: string) {
         return cy.getCookie(name);
     }
+
+    getElementByTextWithOptions(text: string, options: { matchCase?: boolean }) {
+        return cy.contains(text, options);
+    }    
 
 }

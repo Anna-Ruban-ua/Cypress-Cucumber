@@ -17,4 +17,4 @@ Feature: Navigation Tests
     Given I open the "fake" page
     When I see the 404 error message
     And I click "Back to home" button
-    Then I redirected to the "home" page
+    Then I am redirected to the "home" page

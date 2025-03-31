@@ -1,22 +1,19 @@
 import BasePage from "./basePage";
+import { error404Texts } from '../support/texts';
 
 export default class Error404Page extends BasePage {
   public backToHomeButtonLocator = 'a[href="/"]';
 
-  constructor() {
-    super();
-  }
-
   getErrorMessage1() {
-    return this.containsText("Oops, this page doesn’t exist");
+    return this.containsText(error404Texts.message1);
   }
   
   getErrorMessage2() {
-    return this.containsText("Unless you’re trying to access our 404 page. If you are, then you’re in the right place.");
+    return this.containsText(error404Texts.message2);
   }
   
   getBackToHomeButton() {
-    return this.getElementByText(this.backToHomeButtonLocator, "Back to home");
+    return this.getElementByText(this.backToHomeButtonLocator, error404Texts.backToHome);
   }
 
   visitInvalidPage(url: string) {

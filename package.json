@@ -1,10 +1,16 @@
 {
   "name": "task4_cupress_cucumber",
   "version": "1.0.0",
-  "description": "",
+  "description": "Telnyx Cypress-cucumber E2E Testing Project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cypress run",
+    "test:chrome": "cypress run --browser chrome",
+    "test:firefox": "cypress run --browser firefox",
+    "test:mobile": "cypress run --config-file cypress/configs/cypress.config.mobile.ts",
+    "test:fullscreen": "cypress run --config-file cypress/configs/cypress.config.fullscreen.ts",
+    "open": "cypress open",
+    "test:record": "cypress run --record"
   },
   "keywords": [],
   "author": "Anna Ruban",
