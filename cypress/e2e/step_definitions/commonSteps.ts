@@ -24,6 +24,7 @@ Then('I am redirected to the {string} page', (page: string) => {
 When('I accept cookies', () => {
     homePage.getCookieByName('cookie-consent').should('not.exist');
     homePage.acceptCookies();
+    cy.reload();
 });
 
 When('I clear cookies', () => {
@@ -31,7 +32,6 @@ When('I clear cookies', () => {
 });
 
 Then('the cookie banner should be {string}', (state: 'visible' | 'hidden') => {
-  cy.reload();
   if (state === 'visible') {
     homePage.getCookieBanner().should('be.visible', { timeout: 8000 });
   } else {
