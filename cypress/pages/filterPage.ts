@@ -1,7 +1,7 @@
 import BasePage from "./basePage";
 import { solutionsTexts } from '../support/texts';
 
-export default class FilterPage extends BasePage {
+class FilterPage extends BasePage {
     public filterButton = `button:contains("${solutionsTexts.filterButton}")`;
     public filterMenu = '[role="menu"]';
     public menuItemCheckboxes = '[role="menuitemcheckbox"]';
@@ -52,3 +52,5 @@ export default class FilterPage extends BasePage {
         return this.getElementByTextWithOptions(name, { matchCase: false });
     }
 }
+
+export default new FilterPage();

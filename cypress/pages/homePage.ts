@@ -1,7 +1,7 @@
 import BasePage from "./basePage";
 import { ReceiveCallFormData } from '../types/formTypes';
 
-export default class HomePage extends BasePage {
+class HomePage extends BasePage {
     public mainMenuButton = "#main-menu button";
     public menuToggleButton = "button[aria-controls='main-menu-content']";
     public dropDownMenu = "div[data-radix-menu-content]";
@@ -90,3 +90,5 @@ export default class HomePage extends BasePage {
         return this.getElement(this.receiveCallForm).find(selectors[field]);
     }
 }
+
+export default new HomePage();

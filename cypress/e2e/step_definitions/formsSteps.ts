@@ -1,11 +1,9 @@
 import { When, Then, DataTable } from "@badeball/cypress-cucumber-preprocessor";
-import HomePage from "../../pages/homePage";
+import homePage from "../../pages/homePage";
 import { generateValidEmail, generateInvalidEmail, generateInvalidPhone, generateInvalidDomain, generateValidCompanyName } from "cypress/utils/dataGenerator";
 import receiveCallData from "../../fixtures/receiveCallData.json";
 import { faker } from '@faker-js/faker';
 import { endpoints } from "../../utils/endpoints";
-
-const homePage = new HomePage();
 
 When(/^I enter an? (valid|invalid) email in the "Connect with us" form$/, (type: string) => {
     const email = type === 'valid' ? generateValidEmail() : generateInvalidEmail();

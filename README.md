@@ -30,8 +30,13 @@ This repository contains automated end-to-end tests for the Telnyx website, writ
    ```sh
    npm install
    ```
+4. If you don’t have Cypress globally (optional):
+   ```sh
+   npm install -g cypress
+   ```
+### !All required dependencies like @badeball/cypress-cucumber-preprocessor are installed automatically via npm install.
 
-## Steps to Launch
+## Run tests
 
 1. Run tests with default config:
    ```sh
@@ -55,15 +60,14 @@ This repository contains automated end-to-end tests for the Telnyx website, writ
    ```
 6. Open Cypress Test Runner:
    ```sh
-   npm run open
+   npm run cy:open
+   ```
+7. To run tests with recording enabled (Cypress Cloud):
+   ```sh
+   npm run test:record
    ```
 
 ## CI and Cypress Cloud
 
-- The project can be integrated with CI pipelines using GitHub Actions.
+- CI/CD is set up through GitHub Actions. CI/CD pipeline is triggered automatically on every push or merge to the main branch.
 - Cypress Cloud is used to record test runs and view dashboards with test analytics.
-
-To run tests with recording enabled (Cypress Cloud):
-```sh
-npm run test:record
-```

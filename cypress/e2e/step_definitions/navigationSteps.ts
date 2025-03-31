@@ -1,8 +1,6 @@
 import { When, Then } from "@badeball/cypress-cucumber-preprocessor";
-import HomePage from "../../pages/homePage";
+import homePage from "../../pages/homePage";
 import { blocksMap, BlockItem } from "../../utils/constants";
-
-const homePage = new HomePage();
 
 When('I check that the {string} block links are visible in the footer', (blockName: string) => {
   const items: BlockItem[] = blocksMap[blockName];
