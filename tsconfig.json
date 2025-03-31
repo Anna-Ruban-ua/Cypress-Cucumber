@@ -11,5 +11,6 @@
     "baseUrl": "./",
     "resolveJsonModule": true
   },
-  "include": ["cypress/**/*.ts"]
+  "include": ["cypress/**/*.ts"],
+  "exclude": ["cypress/configs", "cypress.config.*.ts"]
 }
