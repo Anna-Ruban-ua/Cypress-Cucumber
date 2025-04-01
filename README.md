@@ -14,7 +14,7 @@ This repository contains automated end-to-end tests for the Telnyx website, writ
 
 ## Test Cases
 
-🧪 [Test cases for Telnyx](https://docs.google.com/spreadsheets/d/1kseA19mz9KTTrFpkDTaiH6Goj3PPxELe0FnmTtAIUak/edit?gid=0)
+🧪 [Test cases for Telnyx](https://docs.google.com/spreadsheets/d/1kseA19mz9KTTrFpkDTaiH6Goj3PPxELe0FnmTtAIUak/edit?gid=1662176966#gid=1662176966)
 
 ## Install
 
